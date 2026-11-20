@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UniKey 市场对标</title>
+<meta name="description" content="UniKey、OpenRouter、B.AI 和 Venice AI 的产品、用户、营收与资本对比。">
+<style>
+:root{color-scheme:light;--paper:#f5f5f8;--ink:#19182a;--muted:#605f72;--line:#dedde7;--violet:#5d43aa;--orange:#ff9b58;--nav:#202033}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 "Inter","PingFang SC","Microsoft YaHei",system-ui,sans-serif}button,a{font:inherit}button{cursor:pointer}a{color:#593ca7;text-underline-offset:4px}button:focus-visible,a:focus-visible{outline:3px solid #8c6cff;outline-offset:4px}button{border:1px solid var(--line);border-radius:9px;background:white;color:var(--ink);padding:.55em .9em}button:hover{border-color:var(--violet)}button:disabled{opacity:.45;cursor:default}[hidden]{display:none!important}
+.shell{min-height:100dvh;display:grid;grid-template-columns:224px minmax(0,1fr)}aside{background:var(--nav);color:#fff;padding:32px 19px;display:flex;flex-direction:column;gap:34px;position:sticky;top:0;height:100dvh}.brand{display:flex;align-items:center;gap:12px;font-size:22px;font-weight:800}.mark{width:26px;height:26px;display:inline-block;background:var(--orange);clip-path:polygon(0 42%,46% 0,100% 0,53% 43%,98% 43%,47% 100%,0 100%,45% 57%,0 57%)}.nav{display:grid;gap:7px}.nav button{text-align:left;background:none;color:#dad7eb;border:0;padding:11px 12px}.nav button[aria-current="page"]{background:#3d3556;color:white;box-shadow:inset 3px 0 var(--orange)}.aside-date{font-size:14px;color:#bbb8cf;margin-top:auto;padding:0 12px}
+main{width:100%;max-width:1540px;margin:auto;align-self:start;padding:0 clamp(20px,4vw,64px)}header,footer{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:19px 0;border-bottom:1px solid var(--line)}footer{border-top:1px solid var(--line);border-bottom:0;margin-top:26px}.header-label{color:var(--muted);font-size:14px}.tools{display:flex;flex-wrap:wrap;gap:8px}.slide{padding:clamp(24px,4vw,50px) 0 0}.slide:focus{outline:none}.eyebrow{color:var(--violet);font-size:14px;font-weight:750;letter-spacing:.08em;margin:0 0 8px}h1,h2,h3,p{margin-top:0}h1{font-size:clamp(32px,4vw,61px);line-height:1.12;letter-spacing:-.035em;margin-bottom:12px}h2{font-size:clamp(28px,3.5vw,50px);line-height:1.15;letter-spacing:-.03em;margin-bottom:12px}h3{font-size:22px;margin-bottom:7px}.lede{color:var(--muted);max-width:68ch;margin-bottom:24px}.hero{min-height:235px;display:grid;grid-template-columns:1fr .53fr;align-items:center;gap:24px;border-radius:18px;padding:clamp(24px,4vw,52px);background:#262139;color:white;position:relative;overflow:hidden}.hero .eyebrow{color:#ffab79}.hero p:last-child{color:#e5dff6;margin-bottom:0}.hero-stat{position:relative;padding-left:22px;border-left:1px solid #746482}.hero-stat strong{font-size:clamp(46px,7vw,98px);line-height:1;font-weight:800;color:var(--orange);display:block;letter-spacing:-.055em}.hero-stat span{display:block;margin-top:8px;color:#e5dff6}.grid{display:grid;gap:14px;margin:20px 0}.four{grid-template-columns:repeat(4,minmax(0,1fr))}.two{grid-template-columns:repeat(2,minmax(0,1fr))}.card{border:1px solid var(--line);background:white;border-radius:13px;padding:18px;min-width:0}.card.key{border-color:#e9a579;background:#fff4e9}.card p:last-child{margin-bottom:0}.card small,.hint{color:var(--muted);font-size:14px}.stat{display:block;font-size:clamp(21px,2.5vw,40px);font-weight:790;letter-spacing:-.04em;margin:4px 0}.label{color:var(--violet);font-weight:700;font-size:14px}.callout{border-left:4px solid #8c6cd1;background:#eee9f9;border-radius:0 9px 9px 0;padding:13px 17px;margin:18px 0}.callout p:last-child{margin-bottom:0}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:13px;background:white}table{width:100%;border-collapse:collapse;min-width:790px}th,td{text-align:left;vertical-align:top;padding:12px 13px;border-bottom:1px solid var(--line)}thead th{background:#ebe7f5}tbody th{width:112px}th:last-child,td:last-child{background:#fff4e9}tr:last-child>*{border-bottom:0}.bar-row{margin:0 0 17px}.bar-label{display:flex;justify-content:space-between;gap:12px;margin-bottom:5px}.track{background:#efedf4;border-radius:5px;height:13px;overflow:hidden}.fill{background:#7961bc;height:100%;width:var(--width);border-radius:5px}.fill.key{background:#e38041}.note{margin-top:14px}.foot-buttons{display:flex;gap:8px}.primary{background:#523a91;color:white;border-color:#523a91}.sources{margin:0;padding-left:21px}.sources li{margin:7px 0}.timeline{list-style:none;padding:0;margin:16px 0}.timeline li{padding:10px 0;border-top:1px solid var(--line)}.timeline time{display:block;color:var(--violet);font-size:14px;font-weight:700}.steps{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.steps span{background:#eee9f9;padding:6px 10px;border-radius:6px}.counter{font-variant-numeric:tabular-nums;color:var(--muted)}.presenting .shell{grid-template-columns:minmax(0,1fr)}.presenting aside{display:none}.presenting main{max-width:1500px}.presenting .slide{padding-top:clamp(18px,3vw,40px)}.presenting .speaker-trigger{display:none}
+dialog{max-width:min(660px,calc(100% - 28px));border:1px solid var(--line);border-radius:15px;padding:24px;color:var(--ink)}dialog::backdrop{background:#161425aa}
+@media(max-width:1000px){.shell{grid-template-columns:170px minmax(0,1fr)}.four{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){.shell{display:block}aside{height:auto;position:static;padding:13px 16px;gap:9px}.nav{display:flex;overflow:auto;white-space:nowrap}.aside-date{display:none}header{padding:12px 0}.hero{grid-template-columns:1fr}.hero-stat{padding-left:0;border-left:0}.two{grid-template-columns:1fr}.card{padding:14px}.header-label{display:none}}
+.flow{display:flex;gap:12px;margin:18px 0}.flow>div{flex:1;min-width:0;border-top:3px solid #8c6cd1;border-radius:8px;background:#eee9f9;padding:12px}.flow b,.flow span{display:block}.flow span{font-size:14px;color:var(--muted);margin-top:4px}.flow>div:last-child{border-color:#e38041;background:#fff4e9}.three{grid-template-columns:repeat(3,minmax(0,1fr))}.allocation{display:flex;border-radius:8px;overflow:hidden;text-align:center;color:white;font-weight:750}.allocation span{padding:8px 0;background:#7961bc}.allocation span:nth-child(2){background:#4f388b}.allocation span:nth-child(3){background:#af500e}.eco-slide .card h3{font-size:19px}.eco-slide input[type=range]{display:block;width:100%;accent-color:#6948ad;margin:8px 0}.eco-slide .lede{margin-bottom:15px}.eco-slide .card{padding:15px}.nav{overflow:auto}.aside-date{flex:none}@media(max-width:700px){.flow{flex-direction:column}.three{grid-template-columns:1fr}}
+@media print{aside,header,footer,dialog{display:none!important}.shell{display:block}main{padding:0;max-width:none}.slide[hidden]{display:block!important}.slide{break-after:page}.table-wrap{overflow:visible}table{min-width:0;font-size:11px}*{print-color-adjust:exact}}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside><div class="brand"><span class="mark" aria-hidden="true"></span>UniKey</div><nav class="nav" aria-label="演示目录"></nav><div class="aside-date">市场对标<br>2026 年 11 月 19 日</div></aside>
+<main>
+<header><span class="header-label">市场分享 / 四家公司公开资料对比</span><div class="tools"><button type="button" class="speaker-trigger" id="notes">讲者备注</button><button type="button" id="present">全屏演示</button></div></header>
+
+<section class="slide" id="overview" data-title="市场总览" tabindex="-1">
+<div class="hero"><div><p class="eyebrow">UNIKEY 市场对标</p><h1>同一个 AI 入口，<br>四种产品路线</h1><p>从一次 AI 调用，到一个可以独立运营的短剧项目。</p></div><div class="hero-stat"><strong>93 万+</strong><span>UniKey 全球注册用户<br>2026.11.19 团队更新<br>Unikey Ltd · 美国科罗拉多州</span></div></div>
+<div class="grid four">
+<article class="card"><span class="label">推理市场</span><h3>OpenRouter</h3><strong class="stat">1,000 万+</strong><small>官网全球用户</small></article>
+<article class="card"><span class="label">Agent 支付</span><h3>B.AI</h3><strong class="stat">2,920,008</strong><small>10 月月报注册用户</small></article>
+<article class="card"><span class="label">隐私 AI</span><h3>Venice AI</h3><strong class="stat">350 万</strong><small>7 月 1 日官宣注册用户</small></article>
+<article class="card key"><span class="label">AI 网关与应用</span><h3>UniKey</h3><strong class="stat">40+</strong><small>Agent 市场 · 团队更新</small></article>
+</div>
+<p class="hint">主讲约 11 分钟 · 产品体验、生态框架、短剧项目、KEY 路线图。<button type="button" data-jump="ecosystem">直接进入生态专题</button></p>
+</section>
+
+<section class="slide" id="product" data-title="产品与赛道" tabindex="-1" hidden>
+<p class="eyebrow">产品与赛道</p><h2>谁解决哪一个问题？</h2><p class="lede">开场先看四家各自在解决什么。详细用户、用量与资本数据见问答附录。</p>
+<div class="table-wrap" tabindex="0" aria-label="四家公司产品对比表">
+<table><thead><tr><th scope="col">维度</th><th scope="col">OpenRouter</th><th scope="col">B.AI</th><th scope="col">Venice AI</th><th scope="col">UniKey</th></tr></thead>
+<tbody>
+<tr><th scope="row">主要入口</th><td>统一推理 API 与路由</td><td>Chat、模型 API 与 Agent 支付</td><td>隐私 AI 应用与开发者 API</td><td>钱包或账户登录，API、创作与 Agent</td></tr>
+<tr><th scope="row">收费方式</th><td>按模型用量计费。Standard / Business 购买 Credits 费率 5.5% / 8%</td><td>模型按量计费，关联 Bank of AI 提供 x402 支付与 8004 身份</td><td>消费端订阅、API Credits、VVV / DIEM 机制</td><td>预付 AI Credits 计量模型、创作与 Agent 使用</td></tr>
+<tr><th scope="row">公开时间</th><td>2023 年初启动</td><td>2026.04.09 公开上线</td><td>2024 年成立，5 月公开上线</td><td>2026.08.22 成都发布会<br>2026.09.19 Unikey Ltd 在美国科罗拉多州注册</td></tr>
+<tr><th scope="row">供给规模</th><td>600+ 模型<br>80+ 供应商</td><td>70+ 多模态模型<br>2026 年 10 月</td><td>200+ 模型<br>2026.07.01</td><td>官网 139+ 模型、46+ 兼容 API 路由，Agent 市场 40+</td></tr>
+</tbody></table></div>
+<div class="callout"><strong>B.AI 是功能重叠最多的竞品。</strong> 两者都覆盖模型接入、钱包支付和 Agent 基础设施。</div>
+</section>
+
+<section class="slide" id="experience" data-title="为什么普通人能用" tabindex="-1" hidden>
+<p class="eyebrow">UniKey 产品优势</p><h2>从一个问题开始，再按任务选工具</h2>
+<p class="lede">首页同时有开发者说明和普通用户入口。分享时从「匿名聊天」开始，直接展示第一次使用的路径。</p>
+<div class="grid two">
+<article class="card key"><h3>现场演示 · 打开就能试</h3><div class="steps"><span>点「匿名聊天」</span><span>选可用模型</span><span>用中文输入任务</span></div><p>实际看到的快速试用页无需登录，页面显示剩余 3/3。模型可搜索，并标注「快速」「标准」「高级」等信息。现场可以试问「把这段活动通知改成适合社群发布的三句话」。</p><a href="https://www.getunikey.ai/anonymous-chat" target="_blank" rel="noopener noreferrer">打开 UniKey 匿名聊天</a></article>
+<article class="card"><h3>从对话走向具体任务</h3><p>日常提问从聊天开始。需要内容创作时，可以用图像、视频等工具，也可从团队披露的 <strong>40+ Agent</strong> 中按任务选择。统一 AI Credits 减少切换工具时管理多个账户与余额的负担。</p><p>公开模型排行与定价提供两个选型依据，用户可以参考实际用量，也能查看模型价格。</p><a href="https://www.getunikey.ai/pricing" target="_blank" rel="noopener noreferrer">查看公开模型定价</a></article>
+</div>
+<div class="callout"><strong>差异在整条使用路径</strong><p>OpenRouter 也提供 Chat，优势集中在模型选择与推理路由。B.AI 也有聊天入口，核心延伸是 Agent 身份与支付。Venice 同样面向普通用户，主打私密创作。UniKey 的产品组合是免登录试用、统一额度、多模态工具和面向任务的 Agent 市场。</p></div>
+</section>
+
+<section class="slide eco-slide" id="ecosystem" data-title="生态全景" tabindex="-1" hidden>
+<p class="eyebrow">UniKey 的生态差异</p><h2>AI 网关是入口，短剧是应用样板</h2>
+<p class="lede">UniKey 的生态设计把模型调用、Agent 服务和可以独立经营的项目连在一起。短剧用这个框架验证内容、发行和链上流动性是否能协同运作。</p>
+<div class="flow" aria-label="UniKey 生态框架"><div><b>能力接入</b><span>多模型路由 · API · AI Credits</span></div><div><b>任务与服务</b><span>AI 市场 · Agent · 工作流市场</span></div><div><b>行业应用</b><span>短剧 IP 样板 · 未来适配项目</span></div><div><b>支付与流动性</b><span>Agent 结算 · KEY／wKEY 配对设计</span></div></div>
+<div class="grid four">
+<article class="card"><h3>OpenRouter</h3><p>重心在统一模型接入、供应商路由和企业推理。</p></article>
+<article class="card"><h3>B.AI</h3><p>重心在模型分发、Agent 身份和稳定币支付。</p></article>
+<article class="card"><h3>Venice AI</h3><p>重心在私密创作、模型访问和代币化使用额度。</p></article>
+<article class="card key"><h3>UniKey</h3><p>短剧项目连接 AI 创作、IP 运营和项目级交易池，并以 KEY／wKEY 作为拟议的共同配对资产。</p></article>
+</div>
+<p class="hint">生态能力来自官方产品文档，行业应用和 KEY 配对属于团队方案。 <a href="https://docs.getunikey.ai/docs/intro/" target="_blank" rel="noopener noreferrer">查看 UniKey 官方生态架构</a></p>
+</section>
+
+<section class="slide eco-slide" id="unicorn-park" data-title="Unicorn Park 短剧" tabindex="-1" hidden>
+<p class="eyebrow">行业应用 · AI 短剧</p><h2>一部短剧，一个 IP 项目</h2>
+<p class="lede">Unicorn Park 官网将内容制作、项目孵化、发行、角色开发与创作者协作连成一条链。团队方案为每部短剧配置独立 IP 代币与交易池。</p>
+<div class="flow" aria-label="Unicorn Park 的 IP 项目流程"><div><b>UPG · 孵化</b><span>先看项目、故事与预告</span></div><div><b>UPM · 制作</b><span>故事、画面、声音的 AIGC 制作</span></div><div><b>UPP · 发行</b><span>作品触达受众，验证收入</span></div></div>
+<div class="grid two">
+<article class="card key"><h3>观众和内容团队得到什么</h3><p>观众先看 PV，再决定是否持续关注某个 IP。创作者可按作品组织预算、制作与发行，合作方也能跟踪各剧的播放、付费、广告和对账表现。</p></article>
+<article class="card"><h3>从单剧延伸到更多创作</h3><p><strong>UPI</strong> 规划发展数字角色、数字偶像和粉丝社区。<strong>CoUP</strong> 规划承接商业创作订单，连接需求、创作者和交付。</p></article>
+</div>
+<div class="callout"><strong>现场可以打开 5 部项目预告</strong><p>UPG 公共页面当前展示 5 部项目 PV，众筹尚未开放。UPM、UPP、UPI 与 CoUP 在官网标为规划。</p><a href="https://www.unicornpark.ai/upg/" target="_blank" rel="noopener noreferrer">查看 UPG 项目与预告</a></div>
+<p class="hint">Unicorn Park 官网将 UP 和 UniKey 表述为独立生态。西安发布会报道双方完成并购签约。本页展示产品协同与拟议机制。</p>
+</section>
+
+<section class="slide eco-slide" id="ip-mechanics" data-title="单剧资金与回购" tabindex="-1" hidden>
+<p class="eyebrow">一剧一 IP 代币 · 团队方案</p><h2>每部剧拟募集 3,000 KEY</h2>
+<p class="lede">以单剧为例，把制作、运营和交易池的预算分开。项目达成盈利后，才进入拟议的回购销毁路径。</p>
+<div class="allocation" role="img" aria-label="30% 制作，50% 运营，20% 初始流动性"><span style="flex:30">30%</span><span style="flex:50">50%</span><span style="flex:20">20%</span></div>
+<div class="grid three">
+<article class="card"><span class="label">制作</span><strong class="stat">900 KEY</strong><small>制作与交付预算</small></article>
+<article class="card"><span class="label">运营</span><strong class="stat">1,500 KEY</strong><small>发行、推广及运营预算</small></article>
+<article class="card key"><span class="label">初始流动性</span><strong class="stat">600 KEY</strong><small>KEY 侧预算，拟以 wKEY 与单剧 IP 代币配对</small></article>
+</div>
+<div class="grid two">
+<article class="card"><h3>盈利后的拟议路径</h3><p>经核算的可分配运营净收益 → 从市场买入 KEY → 按方案 1:1 转为 wKEY → 从单剧池买入该剧 IP 代币 → 销毁买回的 IP 代币。</p><p class="hint">回购会产生买入需求，销毁会减少买回代币的供应。价格仍由后续买卖和池深决定。</p></article>
+<article class="card"><h3>持有人的拟议退出路径</h3><p>单剧 IP 代币 → 在池中卖出换 wKEY → 按方案 1:1 兑回 KEY → 通过支持的交易渠道换为目标稳定币。</p><p class="hint">1:1 指 KEY 与 wKEY 的方案兑换比例。团队讨论中称目标稳定币为 USDat，正式币种和交易对仍待确认。兑付、成交价和可退出数量取决于项目规则和流动性。出售可能获利或亏损。</p></article>
+</div>
+<p class="hint">本页按团队当前方案展示 IP 代币销毁。此前西安发布会报道另有回购并销毁 KEY 的规划，两者涉及不同资产，执行以正式项目规则为准。</p>
+</section>
+
+<section class="slide" id="key-economics" data-title="KEY 与用户共识" tabindex="-1" hidden>
+<p class="eyebrow">代币经济模型</p><h2>让 KEY 的用途落在 AI 服务上</h2>
+<p class="lede">AI Credits 用于平台内消费，KEY 是生态使用型代币，单剧 IP 代币对应各自项目。</p>
+<div class="grid two">
+<article class="card key"><h3>UniKey · 从基础用量到 Agent 服务</h3><ul class="timeline"><li><strong>购买额度</strong><br>白皮书设计允许用 KEY 购买 AI Credits，用于模型、API 与平台内 AI 服务。</li><li><strong>使用 Agent Skills</strong><br>白皮书规划 KEY 用于购买、订阅或调用 Agent Skills，具体可用范围以产品为准。</li><li><strong>持续使用额度</strong><br>按白皮书的 KEY Credits Vault 规则，存入 KEY 可获得每日 AI Credits 模型额度，赎回后停止后续释放。</li></ul></article>
+<article class="card"><h3>竞品分别把支付接在哪里</h3><ul class="timeline"><li><strong>OpenRouter</strong> · 预付 Credits 和按量计费，官网定价以买额度、调用模型和企业合约为主。</li><li><strong>B.AI</strong> · 关联 Bank of AI 用 x402 与稳定币支持按请求支付，8004 提供 Agent 身份。</li><li><strong>Venice</strong> · VVV 质押可铸造 DIEM，1 DIEM 对应每天价值 1 美元的 Venice AI 使用额度。持续额度与 UniKey 存在机制重叠。</li></ul></article>
+</div>
+<div class="callout"><strong>用户共识从反复使用形成</strong><p>用户按任务找到有用的 Agent，开发者有动力持续提供服务，社区可以围绕任务效果和可用额度交流。UniKey 的差异化主张是把 KEY 同时连接模型额度和 Agent 服务市场。这是产品机制要验证的方向。</p></div>
+<p class="hint">Vault 和 Agent Skills 机制按白皮书表述，现场可按实际开放范围演示。 <a href="https://docs.getunikey.ai/docs/whitepaper/" target="_blank" rel="noopener noreferrer">查看 UniKey 白皮书</a></p>
+</section>
+
+<section class="slide eco-slide" id="key-live" data-title="KEY 应用 · 链上案例" tabindex="-1" hidden>
+<p class="eyebrow">KEY 已有链上记录的场景</p><h2>两个地址，两种应用</h2>
+<p class="lede">BNB Smart Chain · 2026.11.19 15:20:12（UTC+4）· 区块 134,494,221</p>
+<div class="grid two">
+<article class="card key"><span class="label">财库质押 · KEYProjectStake</span><strong class="stat">812.0227 KEY</strong><p>质押合约地址持有的 KEY，展示团队标识的财库质押场景。数值采用代币合约余额口径。</p><a href="https://bscscan.com/token/0x32990983f0db5acf52660661725e489cafcfef8d?a=0xD39C41440a0ccc4d4525C371f191CE2017ff7782" target="_blank" rel="noopener noreferrer">查质押合约的 KEY 记录</a></article>
+<article class="card"><span class="label">充值购买 · KEY 支付渠道</span><strong class="stat">208.263384 KEY</strong><p>平台指定充值地址的同区块余额，保留六位小数。累计成功充值额、用户数和 Credits 入账量需与订单记录核对。</p><a href="https://bscscan.com/token/0x32990983f0db5acf52660661725e489cafcfef8d?a=0x205266D0ab2dc3A0Dd2E648bb3207BB7A82836B2" target="_blank" rel="noopener noreferrer">查充值地址的 KEY 记录</a></article>
+</div>
+<div class="callout"><strong>市场机会看支付渗透率</strong><p>团队披露平台也支持法币与 USDT 充值。KEY 支付是其中一个入口。要判断增长空间，跟踪 KEY 渠道的成功充值订单占比、充值后实际使用和复购，并与其他付款渠道并排看。</p></div>
+<p class="hint">两个公开 RPC 节点返回相同余额。地址用途来自团队说明。<a href="https://bscscan.com/block/134494221" target="_blank" rel="noopener noreferrer">查快照区块</a></p>
+</section>
+
+<section class="slide eco-slide" id="key-roadmap" data-title="KEY 生态路线图" tabindex="-1" hidden>
+<p class="eyebrow">多剧到多生态</p><h2>项目越多，KEY 会沉淀得越多吗？</h2>
+<p class="lede">在相同参数下，每新增一部剧可带来 600 KEY 的初始配对预算。存量池里的 KEY 等值，要看其后资金怎么进出。</p>
+<div class="grid two">
+<article class="card key"><h3>初始配对预算模拟</h3><label for="project-count">项目数 <strong id="project-value">10</strong></label><input id="project-count" type="range" min="1" max="100" value="10"><strong class="stat" id="lp-value" aria-live="polite">6,000 KEY</strong><small>项目数 × 600 KEY。仅表示按同一规则初始化配对的预算。</small></article>
+<article class="card"><h3>用资金流判断净沉淀</h3><p><strong>增加</strong> · 新池注入、追加流动性、回购 IP 时进入池子的 wKEY。</p><p><strong>减少</strong> · 用户卖出 IP 换走 wKEY、流动性撤出及其他净流出。</p><p class="hint">看期末净储备、池深与撤出规则。wKEY 的储备和其 KEY 底层支持资产按等值统计一次。</p></article>
+</div>
+<div class="flow" aria-label="生态路线图"><div><b>验证单剧</b><span>先用预告验证需求，再检验制作成本、发行与结算</span></div><div><b>复制到多剧</b><span>统一项目披露、池深和净储备口径</span></div><div><b>扩展到多生态</b><span>适配的项目可发行独立代币并采用 KEY／wKEY 作为配对资产</span></div></div>
+<div class="callout"><strong>KEY 的用途怎样扩大</strong><p>如果更多项目持续使用 KEY，KEY 就能出现在发行预算、LP 配对、交易结算和可核对的运营回购等多种场景。市场由此可以按项目看用户、收入、交易和流动性。各池以 KEY 配对也会共享 KEY 波动，流动性仍分布在各自池中。</p></div>
+</section>
+
+<section class="slide" id="unikey" data-title="UniKey 怎么讲" tabindex="-1" hidden>
+<p class="eyebrow">UniKey 怎么讲</p><h2>从统一接入，到实际使用</h2><p class="lede">开发者通过统一 API 接多个模型，普通用户在同一入口用 Credits 创作或调用 Agent。</p>
+<div class="grid two">
+<article class="card key"><h3>三步讲清产品</h3><div class="steps"><span>钱包或账户登录</span><span>统一 AI Credits</span><span>调用 API、创作工具或 Agent</span></div><p>API 支持 OpenAI 与 Anthropic 兼容接口。AI Credits 是预付、不可转让的平台使用额度。</p></article>
+<article class="card"><h3>让市场团队对齐增长目标</h3><p>在全球注册突破 93 万的披露基础上，持续跟踪从注册到首次有效调用、首次付费与回访使用。</p><div class="steps"><span>注册</span><span>首次有效调用</span><span>首次付费</span><span>持续使用</span></div></article>
+</div>
+<div class="tools" aria-label="问答附录"><button type="button" data-jump="traction">查用户与调用</button><button type="button" data-jump="token">查 Token 用量</button><button type="button" data-jump="capital">查营收与资本</button><button type="button" data-jump="sources">查来源与口径</button></div>
+<div class="callout"><strong>现场结语</strong><p>统一网关让用户用上 AI，短剧样板检验生态如何把 AI 能力变成可持续经营的项目。如果多部作品跑通制作、发行、运营与结算，适合这个框架的更多生态项目也可以用 KEY／wKEY 搭建各自的交易池。判断进展看真实收入、活跃用户和期末池内净储备。</p></div>
+</section>
+
+<section class="slide" id="traction" data-title="用户与调用" tabindex="-1" hidden>
+<p class="eyebrow">用户与调用</p><h2>注册规模与推理用量</h2><p class="lede">有明确注册口径的三家公司可放在同一张图上，各自保留披露日期。</p>
+<div class="grid two">
+<article class="card"><h3>公开注册用户快照</h3><div role="img" aria-label="Venice AI 7 月 1 日 350 万，B.AI 10 月 2,920,008，UniKey 11 月 19 日 93 万以上">
+<div class="bar-row"><div class="bar-label"><span>Venice · 07.01</span><strong>350 万</strong></div><div class="track"><div class="fill" style="--width:100%"></div></div></div>
+<div class="bar-row"><div class="bar-label"><span>B.AI · 10 月</span><strong>2,920,008</strong></div><div class="track"><div class="fill" style="--width:83.43%"></div></div></div>
+<div class="bar-row"><div class="bar-label"><span>UniKey · 11.19</span><strong>93 万+</strong></div><div class="track"><div class="fill key" style="--width:26.57%"></div></div></div></div>
+<p class="hint">OpenRouter 官网列示 1,000 万+全球用户，注册口径未注明。外部研究记录 Venice 8 月中旬用户突破 400 万。</p></article>
+<article class="card"><h3>推理 Token 快照</h3><ul class="timeline">
+<li><strong>OpenRouter · 每月 800 万亿+</strong><time>官网展示</time></li>
+<li><strong>B.AI · 单日突破 1.51 万亿</strong><time>2026 年 9 月项目方新闻稿</time></li>
+<li><strong>Venice · 每月 1.3 万亿</strong><time>2026 年 7 月公司公告</time></li>
+<li><strong>UniKey · 过去一个月 411 亿</strong><time>11 月 19 日公开排行榜快照</time></li>
+</ul></article></div>
+<p class="hint">图中条长按披露值绘制，「93 万+」使用披露下限。各公司快照来自不同月份。单日峰值与月用量各按原始周期展示。</p>
+</section>
+
+<section class="slide" id="token" data-title="Token 用量对标" tabindex="-1" hidden>
+<p class="eyebrow">推理 Token 用量</p><h2>UniKey 近一个月消耗 411 亿 Token</h2><p class="lede">2026 年 11 月 19 日采集 · UniKey 官网排行榜「热门模型」图表展示值</p>
+<div class="grid four">
+<article class="card"><span class="label">过去 24 小时</span><strong class="stat">2.436 亿</strong><small>243.6M Token</small></article>
+<article class="card"><span class="label">「本周」视图</span><strong class="stat">313 亿</strong><small>31.3B Token</small></article>
+<article class="card key"><span class="label">过去一个月</span><strong class="stat">411 亿</strong><small>41.1B Token</small></article>
+<article class="card"><span class="label">自上线以来</span><strong class="stat">1,625 亿</strong><small>162.5B Token</small></article>
+</div>
+<div class="grid two">
+<article class="card"><h3>月度量级对比</h3><p><strong>OpenRouter · 800 万亿+</strong> / 月，官网展示</p><p><strong>Venice AI · 1.3 万亿</strong> / 月，2026 年 7 月公司公告，约为 UniKey 此次月度快照的 <strong>32 倍</strong></p><p><strong>UniKey · 411 亿</strong> / 过去一个月，11 月 19 日快照</p></article>
+<article class="card"><h3>单日数据单独看</h3><p><strong>B.AI · 单日突破 1.51 万亿</strong>，2026 年 9 月项目方披露的里程碑</p><p><strong>UniKey · 过去 24 小时 2.436 亿</strong>，11 月 19 日快照</p><p class="hint">两者日期和统计窗口不同。B.AI 的该公告仅披露单日里程碑。</p></article>
+</div>
+<div class="callout"><strong>近一个月用量最高的模型条目</strong><p>GPT 6.1 Sol 在公开榜单显示为 10.6B，约 106 亿 Token。</p></div>
+<p class="hint">各平台的覆盖范围和 Token 计量规则可能不同，以上用于量级参考。「本周」保留官网视图名称。 <a href="https://www.getunikey.ai/rankings" target="_blank" rel="noopener noreferrer">打开 UniKey 实时排行榜</a></p>
+</section>
+
+<section class="slide" id="capital" data-title="营收与资本" tabindex="-1" hidden>
+<p class="eyebrow">营收与资本</p><h2>融资、估值与营收</h2><p class="lede">金额均为美元。年化营收反映当时的经营速度，全年实际营收看财务披露。</p>
+<div class="grid two">
+<article class="card"><h3>OpenRouter</h3><p><strong>4,000 万</strong> · 2025 年 6 月公司公告种子轮与 A 轮合计。Menlo Ventures 与 a16z 领投，Sequoia 等参与。</p><p><strong>1.13 亿 B 轮 / 约 13 亿估值</strong> · 2026 年 5 月，CapitalG 领投。NVentures、ServiceNow Ventures、MongoDB Ventures、Snowflake Ventures、Databricks Ventures、AMP PBC、Pace Capital 及既有投资方参与。估值为媒体报道。</p><p><strong>约 1.6 亿年化营收</strong> · 2026 年 8 月，Sacra 估算，7 月估算为 1.4 亿。</p></article>
+<article class="card"><h3>Venice AI</h3><p><strong>6,500 万 A 轮 / 10 亿估值</strong> · 2026 年 7 月 1 日，首笔外部融资。Dragonfly 领投，Coinbase Ventures、F-Prime、North Island Ventures、Banyan 等参与。</p><p><strong>年化营收突破 1 亿</strong> · Banyan 披露为 2026 年 8 月水平，1 月为 1,400 万，7 月 2 日为 7,100 万。</p></article>
+<article class="card"><h3>B.AI</h3><p>项目方披露由 TRON 与 YZi Labs 共同孵化，Justin Sun 为战略顾问。股权融资额、估值与营收未找到可核验的公开金额。</p></article>
+<article class="card key"><h3>UniKey</h3><p>公开披露与香港维港资本基金会达成战略合作。股权融资额、估值与实际营收未找到可核验的公开金额。</p></article>
+</div>
+<div class="callout"><strong>Stripe 收购 OpenRouter</strong><p>8 月 19 日宣布签约，11 月 10 日宣布完成。对价未官宣，媒体报道约 75 亿或超过 80 亿。两笔早期融资的分类在公司公告和投资方披露中存在差异，因此按公司公告逐笔列示。</p></div>
+</section>
+
+<section class="slide" id="sources" data-title="来源与口径" tabindex="-1" hidden>
+<p class="eyebrow">来源与口径</p><h2>每个数字都能回到出处</h2>
+<div class="grid two" id="source-list"></div>
+<div class="callout">UniKey 93 万+ 注册用户及 Agent 市场 40+ 采用 11 月 19 日团队更新口径；推理 Token 采用当日官网排行榜图表。注册用户、全球用户、开发者和付费用户口径各异。充值、Credits 消耗、链上资金池、已确认营收、股权估值和并购对价各有独立口径。</div>
+</section>
+<footer><span class="counter" aria-live="polite" id="counter"></span><div class="foot-buttons"><button type="button" id="prev">上一页</button><button type="button" id="next" class="primary">下一页</button></div></footer>
+</main>
+</div>
+<dialog id="speaker"><h3>讲者备注</h3><p id="speaker-text"></p><form method="dialog"><button>关闭</button></form></dialog>
+<script>
+const sourceGroups = {
+ 'OpenRouter': [
+  ['官网用户与推理规模','https://openrouter.ai/about'],['2025 年早期融资公司公告','https://www.globenewswire.com/news-release/2025/06/25/3105125/0/en/openrouter-raises-40-million-to-scale-up-multi-model-inference-for-enterprise.html'],['B 轮融资公告','https://openrouter.ai/blog/announcements/series-b/'],['TechCrunch B 轮估值报道','https://techcrunch.com/2026/05/26/openrouter-more-than-doubles-valuation-to-1-3b-in-a-year/'],['Sacra 年化营收估算','https://sacra.com/c/openrouter/'],['Stripe 收购签约公告','https://stripe.com/newsroom/news/stripe-agrees-to-acquire-openrouter'],['Stripe 交割新闻稿','https://prtimes.jp/main/html/rd/p/000000142.000077879.html'],['TechCrunch 对价报道','https://techcrunch.com/2026/08/19/stripe-didnt-really-buy-openrouter-because-of-the-singularity/'],['Axios 对价报道','https://www.axios.com/2026/08/17/stripe-openrouter-paypal'],['官方定价','https://openrouter.ai/pricing'],['OpenRouter Chat','https://openrouter.ai/chat']],
+ 'B.AI': [
+  ['10 月生态月报','https://h.chaincatcher.com/en/article/2301033'],['项目方孵化与吞吐新闻稿','https://www.globenewswire.com/news-release/2026/09/16/3363374/0/en/unlocking-the-trillion-token-era-b-ai-s-global-settlement-layer-for-the-agent-economy.html'],['公开上线与团队资料','https://cryptoslate.com/companies/b-ai/'],['Bank of AI 支付与身份','https://www.bankofai.io/'],['B.AI Chat 与模型服务文档','https://docs.b.ai/']],
+ 'Venice AI': [
+  ['A 轮与 7 月运营数据','https://venice.ai/blog/venice-raises-65-million-series-a'],['Banyan 年化营收披露','https://www.banyan-vc.com/insights/why-banyan-fund-ii-invested-in-venice-ai-14m-to-100m-annualized-revenue-in-seven-months-with-a-team-of-33'],['上线与 VVV 官方资料','https://venice.ai/blog/introducing-the-venice-token-vvv'],['Apollo Crypto 用户里程碑','https://apollocrypto.com/a-pound-of-inference/'],['Venice DIEM 每日额度','https://venice.ai/es/blog/tokenomics-update-credit-burns-and-diem-supply-expansion']],
+ 'UniKey': [
+  ['11 月 13 日西安发布会 · 历史披露 91 万','https://www.taginlabs.com/zh/articles/unikey-ai-short-drama-launch-conference-xian-unicorn-park-acquisition'],['成都发布会及维港资本合作','https://www.taginlabs.com/zh/articles/unikey-2026'],['官网排行榜及各周期 Token 用量','https://www.getunikey.ai/rankings'],['官网模型与 API 路由','https://www.getunikey.ai/'],['统一网关文档','https://docs.getunikey.ai/docs/intro/'],['Unicorn Park 官网 · 五个产品模块','https://www.unicornpark.ai/'],['UPG · 项目预告与众筹状态','https://www.unicornpark.ai/upg/'],['官方服务条款与 Credits','https://docs.getunikey.ai/zh-Hans/docs/terms-of-service/'],['匿名聊天与快速试用','https://www.getunikey.ai/anonymous-chat'],['KEY 与 AI Credits 白皮书','https://docs.getunikey.ai/docs/whitepaper/'],['BNB Smart Chain 链上案例快照区块','https://bscscan.com/block/134494221'],['科罗拉多州官方登记数据 · 20268160984','https://data.colorado.gov/resource/4ykn-tg5h.json?entityid=20268160984']]
+};
+const remarks = [
+ '约 45 秒。开场就给结论：UniKey 以统一 AI 网关为入口，再用短剧验证怎样把 AI 能力变成可以独立运营的项目。点出 93 万+ 注册与 40+ Agent。接下来一页交代选这三家对标的原因。',
+ '约 1 分钟。OpenRouter 看模型路由，B.AI 看 Agent 支付，Venice 看隐私与创作。三家各有优势。用户、营收和资本明细留到问答。过渡：先让大家看看普通用户怎样开始用 UniKey。',
+ '约 1 分 30 秒。打开匿名聊天，选一个模型，用中文输入一个明确任务。过渡：聊天降低第一次使用门槛，而 Agent 和行业项目把这套能力带到具体工作里。',
+ '约 1 分钟。按能力接入、任务与服务、行业应用、支付与流动性四层讲。过渡：用短剧看这四层怎样落在一个具体项目上。',
+ '约 1 分 15 秒。打开 UPG，选一个预告展示即可。按孵化、制作、发行讲，补充角色和商业协作。当前 UPG 众筹未开放。过渡：接下来看一部剧的预算和运营路径。',
+ '约 1 分 30 秒。按 900、1,500、600 KEY 念清预算。回购后的销毁对象是单剧 IP 代币。退出路径按成交条件解释。过渡：为什么项目池用 KEY／wKEY，它与平台每天消耗的 AI Credits 有什么关系？',
+ '约 1 分钟。先区分 KEY、AI Credits 和单剧 IP 代币。Venice 也有持续额度，UniKey 方案把 KEY 的用途延伸到 Agent Skills 和行业项目配对。过渡：先看两个已有链上记录的 KEY 场景，再看多项目的拟议配对。',
+ '约 1 分钟。展示两个地址的余额快照。财库合约 812.0227 KEY，充值地址约 208.263384 KEY。说明平台还有法币与 USDT 渠道，后续看 KEY 支付渗透率和实际 Credits 使用。',
+ '约 1 分钟。将滑杆从 10 部拖到 50 部，展示 6,000 到 30,000 KEY 的初始配对预算。实际沉淀查看期末净储备。过渡：收尾讲市场团队今天应该记住什么。',
+ '约 45 秒。先用产品，再用短剧验证项目规则，最后用真实营收、活跃用户和池内净储备来判断能否复制。主讲结束，提问时再跳到附录。',
+ '问答备用。注册数据保留各自日期。OpenRouter 的全球用户指标没有明确注册口径。',
+ '问答备用。UniKey 近一个月 411 亿，累计 1,625 亿。月度与单日数列各用原始口径。',
+ '问答备用。OpenRouter 的 B 轮估值与收购对价各有来源。Venice 年化营收来自投资方披露。',
+ '问答备用。按公司打开相关来源。涉及短剧交易机制时，区分团队方案与官网当前开放状态。'
+];
+const projectCount = document.querySelector('#project-count');
+const keyFormat = new Intl.NumberFormat('zh-CN');
+projectCount.addEventListener('input', () => {
+ const count = Number(projectCount.value);
+ document.querySelector('#project-value').textContent = keyFormat.format(count);
+ document.querySelector('#lp-value').textContent = keyFormat.format(count * 600) + ' KEY';
+});
+const slides = [...document.querySelectorAll('.slide')];
+const nav = document.querySelector('.nav');
+document.querySelectorAll('[data-jump]').forEach(button => {
+ button.addEventListener('click', () => show(slides.findIndex(slide => slide.id === button.dataset.jump)));
+});
+const counter = document.querySelector('#counter');
+const prev = document.querySelector('#prev');
+const next = document.querySelector('#next');
+const present = document.querySelector('#present');
+const speaker = document.querySelector('#speaker');
+const navigation = slides.map((slide, index) => {
+ const button = document.createElement('button');
+ button.type = 'button';
+ button.textContent = slide.dataset.title;
+ button.addEventListener('click', () => show(index));
+ nav.append(button);
+ return button;
+});
+for (const [name, links] of Object.entries(sourceGroups)) {
+ const card = document.createElement('article');
+ card.className = 'card';
+ const title = document.createElement('h3');
+ title.textContent = name;
+ const list = document.createElement('ul');
+ list.className = 'sources';
+ for (const [label, url] of links) {
+  const item = document.createElement('li');
+  const link = document.createElement('a');
+  link.href = url;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.textContent = label;
+  item.append(link);
+  list.append(item);
+ }
+ card.append(title, list);
+ document.querySelector('#source-list').append(card);
+}
+let current = 0;
+function show(index, { updateLocation = true, focus = true } = {}) {
+ current = Math.max(0, Math.min(index, slides.length - 1));
+ slides.forEach((slide, position) => {
+  slide.hidden = position !== current;
+  if (position === current) navigation[position].setAttribute('aria-current', 'page');
+  else navigation[position].removeAttribute('aria-current');
+ });
+ counter.textContent = (current + 1) + ' / ' + slides.length + ' · ' + slides[current].dataset.title;
+ prev.disabled = current === 0;
+ next.disabled = current === slides.length - 1;
+ if (updateLocation && location.hash !== '#' + slides[current].id) history.pushState(null, '', '#' + slides[current].id);
+ if (focus) slides[current].focus({ preventScroll: true });
+ window.scrollTo(0, 0);
+}
+function applyLocation() {
+ const index = slides.findIndex(slide => '#' + slide.id === location.hash);
+ show(Math.max(0, index), { updateLocation: false, focus: false });
+}
+function setPresentation(active) {
+ document.body.classList.toggle('presenting', active);
+ present.textContent = active ? '退出演示' : '全屏演示';
+ present.setAttribute('aria-pressed', String(active));
+}
+prev.onclick = () => show(current - 1);
+next.onclick = () => show(current + 1);
+document.querySelector('#notes').onclick = () => {
+ document.querySelector('#speaker-text').textContent = remarks[current];
+ speaker.showModal();
+};
+present.onclick = async () => {
+ const active = document.body.classList.contains('presenting');
+ setPresentation(!active);
+ try {
+  if (active && document.fullscreenElement) await document.exitFullscreen();
+  else if (!active) await document.documentElement.requestFullscreen?.();
+ } catch { /* Embedded or offline viewers can still use the presentation layout. */ }
+};
+document.addEventListener('fullscreenchange', () => {
+ if (!document.fullscreenElement) setPresentation(false);
+});
+document.addEventListener('keydown', event => {
+ if (speaker.open || event.ctrlKey || event.metaKey || event.altKey) return;
+ if (event.key === 'Escape' && !document.fullscreenElement) setPresentation(false);
+ if (event.target.closest('.table-wrap, input')) return;
+ if (['ArrowRight', 'PageDown'].includes(event.key)) {
+  event.preventDefault();
+  if (current < slides.length - 1) show(current + 1);
+ }
+ if (['ArrowLeft', 'PageUp'].includes(event.key)) {
+  event.preventDefault();
+  if (current > 0) show(current - 1);
+ }
+});
+window.addEventListener('hashchange', applyLocation);
+applyLocation();
+</script>
+</body>
+</html>
