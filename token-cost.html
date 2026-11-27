@@ -10,42 +10,45 @@
 </div>
 <section><h2>切换输入／输出比例</h2><label for="ratio">普通文本用量 <strong id="mix"></strong></label><input id="ratio" type="range" min="0" max="100" value="20" step="1">
 <div id="presets"><button type="button" data-ratio="10">90／10</button> <button type="button" data-ratio="20">80／20</button> <button type="button" data-ratio="30">70／30</button></div>
-<p class="muted">滑杆调整输出占比。两套报价共用相同用量比例，按普通文本输入和输出计价。</p>
+<label for="cache">输入缓存命中率 <strong id="cacheMix"></strong></label><input id="cache" type="range" min="0" max="100" value="0" step="1">
+<p class="muted" id="split"></p>
+<p class="muted">输入是发给 AI 的问题和资料，输出是 AI 生成的回答。缓存命中指输入里可复用的部分。比如 80% 输入、20% 输出，输入中有一半命中缓存时，就拆成 40% 普通输入、40% 缓存输入、20% 输出。</p>
 <div class="barlabel"><span>官方</span><b id="officialBar"></b></div><div class="bar" aria-hidden="true"><div style="width:100%"></div></div>
 <div class="barlabel"><span>UniKey</span><b id="unikeyBar"></b></div><div class="bar green" aria-hidden="true"><div id="fill"></div></div></section>
-<section><h2>逐模型明细</h2><p class="muted">费率列为积分／百万 Token，按「输入／输出」排列。金额为美元。</p><div class="scroll" tabindex="0" aria-label="模型用量与报价对比"><table><thead><tr><th scope="col">模型条目</th><th scope="col">百万 Token</th><th scope="col">官方费率</th><th scope="col">UniKey 费率</th><th scope="col">官方金额</th><th scope="col">UniKey 金额</th><th scope="col">节省金额</th></tr></thead><tbody id="rows"></tbody><tfoot id="totals"></tfoot></table></div></section>
-<section><h2>计算口径</h2><p>每模型金额 = 百万 Token 用量 ×（输入费率 × 输入占比 + 输出费率 × 输出占比）÷ 10,000。</p><p>前十条目合计 322.409 亿 Token，覆盖约 96.82%。其余 10.591 亿 Token 按各报价列的前十加权费率外推。同名模型按各自定价条目计费。</p><p>「官方」和「UniKey」均取自 UniKey 前端价格页的对应报价列。榜单只展示总 Token，缓存和图片、音频等费率未单列。结果为前端报价情景测算，账单实扣需查看用量明细。</p><p><a href="https://www.getunikey.ai/rankings">官网周榜</a> · <a href="https://www.getunikey.ai/pricing">官网定价</a> · <a href="./">返回市场演示</a></p></section>
+<section><h2>逐模型明细</h2><p class="muted">费率列为积分／百万 Token，按「普通输入／缓存输入／输出」排列。— 表示本次未核验到缓存报价，该条目按普通输入价计算。金额为美元。</p><div class="scroll" tabindex="0" aria-label="模型用量与报价对比"><table><thead><tr><th scope="col">模型条目</th><th scope="col">百万 Token</th><th scope="col">官方费率</th><th scope="col">UniKey 费率</th><th scope="col">官方金额</th><th scope="col">UniKey 金额</th><th scope="col">节省金额</th></tr></thead><tbody id="rows"></tbody><tfoot id="totals"></tfoot></table></div></section>
+<section><h2>计算口径</h2><p>每模型金额 = 百万 Token 用量 ×（普通输入费率 × 普通输入占比 + 缓存输入费率 × 缓存输入占比 + 输出费率 × 输出占比）÷ 10,000。</p><p>前十条目合计 322.409 亿 Token，覆盖约 96.82%。其余 10.591 亿 Token 按各报价列的前十加权费率外推。同名模型按各自定价条目计费。</p><p>「官方」和「UniKey」均取自 UniKey 前端价格页的对应报价列。榜单只展示总 Token，输入／输出比例和缓存命中率均为情景参数。已核验缓存输入价的条目应用该费率，其余按普通输入价计算。缓存写入、图片与音频等费用未计入。结果为前端报价情景测算，账单实扣需查看用量明细。</p><p><a href="https://www.getunikey.ai/rankings">官网周榜</a> · <a href="https://www.getunikey.ai/pricing">官网定价</a> · <a href="./">返回市场演示</a></p></section>
 </main>
 <script>
 const models = [
- ['DeepSeek V4 Flash','deepseek-v4-flash',9290,1400,2800,280,560],
+ ['DeepSeek V4 Flash','deepseek-v4-flash',9290,1400,2800,280,560,280,56],
  ['GPT 6.1 Sol','gpt-6.1-sol',7120,40000,400000,8000,80000],
- ['DeepSeek V4 Flash · deepseek 路由','deepseek%2Fdeepseek-v4-flash',5400,900,1800,180,360],
- ['GPT 6 Astra','gpt-6-astra',5080,200000,1000000,40000,200000],
+ ['DeepSeek V4 Flash · deepseek 路由','deepseek%2Fdeepseek-v4-flash',5400,900,1800,180,360,180,36],
+ ['GPT 6 Astra','gpt-6-astra',5080,200000,1000000,40000,200000,100000,20000],
  ['GPT 5.6 Sol','gpt-5.6-sol',1580,25000,200000,5000,40000],
  ['GPT 5.6 Luna','gpt-5.6-luna',1290,20000,160000,4000,32000],
- ['Claude Opus 5.5','claude-opus-5-5',743.5,100000,2000000,20000,400000],
+ ['Claude Opus 5.5','claude-opus-5-5',743.5,100000,2000000,20000,400000,50000,10000],
  ['DeepSeek V4 Pro','deepseek-v4-pro',686,4350,8700,870,1740],
- ['DeepSeek V4 Pro · deepseek 路由','deepseek%2Fdeepseek-v4-pro',529.3,4350,8700,870,1740],
+ ['DeepSeek V4 Pro · deepseek 路由','deepseek%2Fdeepseek-v4-pro',529.3,4350,8700,870,1740,36.2486,7.2497],
  ['GPT 5.5','gpt-5.5',522.1,50000,300000,10000,60000]
 ];
 const total = 33300;
 const covered = models.reduce((sum, model) => sum + model[2], 0);
-const number = new Intl.NumberFormat('zh-CN');
+const number = new Intl.NumberFormat('zh-CN',{maximumFractionDigits:4});
 const usd = new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'});
 const byId = id => document.getElementById(id);
 function render(){
  const output = Number(byId('ratio').value);
  const share = output / 100;
- const cost = (volume, input, out) => volume * (input * (1-share) + out * share) / 10000;
+ const cache = Number(byId('cache').value) / 100;
+ const cost = (volume, input, out, hit) => volume * ((1-share)*(input*(1-cache)+(hit??input)*cache)+out*share) / 10000;
  let official = 0, unikey = 0;
  const row = (name, volume, op, up, o, u) => '<tr><td>'+name+'</td><td>'+number.format(volume)+'</td><td>'+op+'</td><td>'+up+'</td><td>'+usd.format(o)+'</td><td>'+usd.format(u)+'</td><td>'+usd.format(o-u)+'</td></tr>';
- const rate = (i,o) => number.format(i)+' / '+number.format(o);
- byId('rows').innerHTML = models.map(([name,path,v,oi,oo,ui,uo]) => {
-  const o = cost(v,oi,oo), u = cost(v,ui,uo);
+ const rate = (i,h,o) => number.format(i)+' / '+(h==null?'—':number.format(h))+' / '+number.format(o);
+ byId('rows').innerHTML = models.map(([name,path,v,oi,oo,ui,uo,oh,uh]) => {
+  const o = cost(v,oi,oo,oh), u = cost(v,ui,uo,uh);
   official += o;
   unikey += u;
-  return row('<a href="https://www.getunikey.ai/pricing/'+path+'">'+name+'</a>',v,rate(oi,oo),rate(ui,uo),o,u);
+  return row('<a href="https://www.getunikey.ai/pricing/'+path+'">'+name+'</a>',v,rate(oi,oh,oo),rate(ui,uh,uo),o,u);
  }).join('');
  const rest = total - covered, officialRest = official * rest / covered, unikeyRest = unikey * rest / covered;
  byId('rows').innerHTML += row('前十小计',covered,'—','—',official,unikey) + row('其余用量（外推）',rest,'加权','加权',officialRest,unikeyRest);
@@ -53,6 +56,9 @@ function render(){
  unikey += unikeyRest;
  byId('totals').innerHTML = row('全周估算',total,'—','—',official,unikey);
  byId('mix').textContent = (100-output)+'% 输入 / '+output+'% 输出';
+ byId('cacheMix').textContent = number.format(cache*100)+'%（占输入）';
+ byId('cache').setAttribute('aria-valuetext',byId('cacheMix').textContent);
+ byId('split').textContent = '占总 Token：普通输入 '+number.format((1-share)*(1-cache)*100)+'% · 缓存输入 '+number.format((1-share)*cache*100)+'% · 输出 '+output+'%。';
  byId('ratio').setAttribute('aria-valuetext',byId('mix').textContent);
  byId('official').textContent = byId('officialBar').textContent = usd.format(official);
  byId('unikey').textContent = byId('unikeyBar').textContent = usd.format(unikey);
@@ -64,6 +70,7 @@ function render(){
  for (const button of document.querySelectorAll('[data-ratio]')) button.setAttribute('aria-pressed',String(Number(button.dataset.ratio)===output));
 }
 byId('ratio').addEventListener('input',render);
+byId('cache').addEventListener('input',render);
 byId('presets').addEventListener('click',event=>{
  const button=event.target.closest('[data-ratio]');
  if(button){byId('ratio').value=button.dataset.ratio;render();}
