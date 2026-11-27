@@ -1,0 +1,72 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>UniKey 模型使用成本对比</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#11131e;color:#eff1ff;font:16px/1.55 system-ui,sans-serif}main{max-width:1160px;margin:auto;padding:42px 22px}h1{font-size:clamp(32px,5vw,62px);line-height:1.08;margin:12px 0}h2{margin:0 0 12px}p{margin:8px 0}.muted,small{color:#b9bed6}a{color:#b8b2ff}header{border-bottom:1px solid #454761;padding-bottom:25px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}.card,section{border:1px solid #3a3d56;background:#1c2030;border-radius:15px;padding:18px}.card strong{display:block;font-size:clamp(24px,4vw,43px);line-height:1.35}.card:nth-child(2),.card:nth-child(3){color:#9ff0c9}section{margin:18px 0}label{display:block}input{width:min(100%,420px);accent-color:#8ce9b6}button{background:#323654;color:white;border:1px solid #66698b;border-radius:8px;padding:7px 12px;cursor:pointer}button[aria-pressed=true]{background:#9ff0c9;color:#101920}.bar{height:14px;background:#343750;border-radius:20px;overflow:hidden;margin:5px 0 14px}.bar div{height:100%;background:#ae9bff}.bar.green div{background:#8ce9b6}.barlabel{display:flex;justify-content:space-between}.scroll{overflow:auto}table{width:100%;border-collapse:collapse;min-width:850px;font-variant-numeric:tabular-nums}th,td{padding:9px;text-align:right;border-bottom:1px solid #3a3d56}th:first-child,td:first-child{text-align:left}thead{color:#c4c5db}td:last-child{color:#9ff0c9}tfoot{font-weight:bold}@media(max-width:630px){.cards{grid-template-columns:1fr}}
+</style>
+<main><header><small>UNIKEY · 周度同用量比价</small><h1>同样的 Token，用两套价格算</h1><p class="muted">2026 年 11 月 27 日官网「本周」快照 · 333 亿 Token · 1 美元 = 10,000 积分</p></header>
+<div class="cards" aria-live="polite">
+<div class="card">官方报价估算<strong id="official"></strong><small id="officialCredits"></small></div>
+<div class="card">UniKey 报价估算<strong id="unikey"></strong><small id="unikeyCredits"></small></div>
+<div class="card">同用量节省<strong id="saving"></strong><small id="savingRatio"></small></div>
+</div>
+<section><h2>切换输入／输出比例</h2><label for="ratio">普通文本用量 <strong id="mix"></strong></label><input id="ratio" type="range" min="0" max="100" value="20" step="1">
+<div id="presets"><button type="button" data-ratio="10">90／10</button> <button type="button" data-ratio="20">80／20</button> <button type="button" data-ratio="30">70／30</button></div>
+<p class="muted">滑杆调整输出占比。两套报价共用相同用量比例，按普通文本输入和输出计价。</p>
+<div class="barlabel"><span>官方</span><b id="officialBar"></b></div><div class="bar" aria-hidden="true"><div style="width:100%"></div></div>
+<div class="barlabel"><span>UniKey</span><b id="unikeyBar"></b></div><div class="bar green" aria-hidden="true"><div id="fill"></div></div></section>
+<section><h2>逐模型明细</h2><p class="muted">费率列为积分／百万 Token，按「输入／输出」排列。金额为美元。</p><div class="scroll" tabindex="0" aria-label="模型用量与报价对比"><table><thead><tr><th scope="col">模型条目</th><th scope="col">百万 Token</th><th scope="col">官方费率</th><th scope="col">UniKey 费率</th><th scope="col">官方金额</th><th scope="col">UniKey 金额</th><th scope="col">节省金额</th></tr></thead><tbody id="rows"></tbody><tfoot id="totals"></tfoot></table></div></section>
+<section><h2>计算口径</h2><p>每模型金额 = 百万 Token 用量 ×（输入费率 × 输入占比 + 输出费率 × 输出占比）÷ 10,000。</p><p>前十条目合计 322.409 亿 Token，覆盖约 96.82%。其余 10.591 亿 Token 按各报价列的前十加权费率外推。同名模型按各自定价条目计费。</p><p>「官方」和「UniKey」均取自 UniKey 前端价格页的对应报价列。榜单只展示总 Token，缓存和图片、音频等费率未单列。结果为前端报价情景测算，账单实扣需查看用量明细。</p><p><a href="https://www.getunikey.ai/rankings">官网周榜</a> · <a href="https://www.getunikey.ai/pricing">官网定价</a> · <a href="./">返回市场演示</a></p></section>
+</main>
+<script>
+const models = [
+ ['DeepSeek V4 Flash','deepseek-v4-flash',9290,1400,2800,280,560],
+ ['GPT 6.1 Sol','gpt-6.1-sol',7120,40000,400000,8000,80000],
+ ['DeepSeek V4 Flash · deepseek 路由','deepseek%2Fdeepseek-v4-flash',5400,900,1800,180,360],
+ ['GPT 6 Astra','gpt-6-astra',5080,200000,1000000,40000,200000],
+ ['GPT 5.6 Sol','gpt-5.6-sol',1580,25000,200000,5000,40000],
+ ['GPT 5.6 Luna','gpt-5.6-luna',1290,20000,160000,4000,32000],
+ ['Claude Opus 5.5','claude-opus-5-5',743.5,100000,2000000,20000,400000],
+ ['DeepSeek V4 Pro','deepseek-v4-pro',686,4350,8700,870,1740],
+ ['DeepSeek V4 Pro · deepseek 路由','deepseek%2Fdeepseek-v4-pro',529.3,4350,8700,870,1740],
+ ['GPT 5.5','gpt-5.5',522.1,50000,300000,10000,60000]
+];
+const total = 33300;
+const covered = models.reduce((sum, model) => sum + model[2], 0);
+const number = new Intl.NumberFormat('zh-CN');
+const usd = new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'});
+const byId = id => document.getElementById(id);
+function render(){
+ const output = Number(byId('ratio').value);
+ const share = output / 100;
+ const cost = (volume, input, out) => volume * (input * (1-share) + out * share) / 10000;
+ let official = 0, unikey = 0;
+ const row = (name, volume, op, up, o, u) => '<tr><td>'+name+'</td><td>'+number.format(volume)+'</td><td>'+op+'</td><td>'+up+'</td><td>'+usd.format(o)+'</td><td>'+usd.format(u)+'</td><td>'+usd.format(o-u)+'</td></tr>';
+ const rate = (i,o) => number.format(i)+' / '+number.format(o);
+ byId('rows').innerHTML = models.map(([name,path,v,oi,oo,ui,uo]) => {
+  const o = cost(v,oi,oo), u = cost(v,ui,uo);
+  official += o;
+  unikey += u;
+  return row('<a href="https://www.getunikey.ai/pricing/'+path+'">'+name+'</a>',v,rate(oi,oo),rate(ui,uo),o,u);
+ }).join('');
+ const rest = total - covered, officialRest = official * rest / covered, unikeyRest = unikey * rest / covered;
+ byId('rows').innerHTML += row('前十小计',covered,'—','—',official,unikey) + row('其余用量（外推）',rest,'加权','加权',officialRest,unikeyRest);
+ official += officialRest;
+ unikey += unikeyRest;
+ byId('totals').innerHTML = row('全周估算',total,'—','—',official,unikey);
+ byId('mix').textContent = (100-output)+'% 输入 / '+output+'% 输出';
+ byId('ratio').setAttribute('aria-valuetext',byId('mix').textContent);
+ byId('official').textContent = byId('officialBar').textContent = usd.format(official);
+ byId('unikey').textContent = byId('unikeyBar').textContent = usd.format(unikey);
+ byId('saving').textContent = usd.format(official-unikey);
+ byId('officialCredits').textContent = number.format(Math.round(official*10000))+' 积分';
+ byId('unikeyCredits').textContent = number.format(Math.round(unikey*10000))+' 积分';
+ byId('savingRatio').textContent = ((1-unikey/official)*100).toFixed(1)+'% 低于官方报价';
+ byId('fill').style.width = (unikey/official*100)+'%';
+ for (const button of document.querySelectorAll('[data-ratio]')) button.setAttribute('aria-pressed',String(Number(button.dataset.ratio)===output));
+}
+byId('ratio').addEventListener('input',render);
+byId('presets').addEventListener('click',event=>{
+ const button=event.target.closest('[data-ratio]');
+ if(button){byId('ratio').value=button.dataset.ratio;render();}
+});
+render();
+</script></html>
