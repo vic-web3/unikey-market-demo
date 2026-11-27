@@ -2,27 +2,16 @@
 <style>
 *{box-sizing:border-box}body{margin:0;background:#11131e;color:#eff1ff;font:16px/1.55 system-ui,sans-serif}main{max-width:1160px;margin:auto;padding:42px 22px}h1{font-size:clamp(32px,5vw,62px);line-height:1.08;margin:12px 0}h2{margin:0 0 12px}p{margin:8px 0}.muted,small{color:#b9bed6}a{color:#b8b2ff}header{border-bottom:1px solid #454761;padding-bottom:25px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}.card,section{border:1px solid #3a3d56;background:#1c2030;border-radius:15px;padding:18px}.card strong{display:block;font-size:clamp(24px,4vw,43px);line-height:1.35}.card:nth-child(2),.card:nth-child(3){color:#9ff0c9}section{margin:18px 0}label{display:block}input{width:min(100%,420px);accent-color:#8ce9b6}button{background:#323654;color:white;border:1px solid #66698b;border-radius:8px;padding:7px 12px;cursor:pointer}button[aria-pressed=true]{background:#9ff0c9;color:#101920}.bar{height:14px;background:#343750;border-radius:20px;overflow:hidden;margin:5px 0 14px}.bar div{height:100%;background:#ae9bff}.bar.green div{background:#8ce9b6}.barlabel{display:flex;justify-content:space-between}.scroll{overflow:auto}table{width:100%;border-collapse:collapse;min-width:850px;font-variant-numeric:tabular-nums}th,td{padding:9px;text-align:right;border-bottom:1px solid #3a3d56}th:first-child,td:first-child{text-align:left}thead{color:#c4c5db}td:last-child{color:#9ff0c9}tfoot{font-weight:bold}@media(max-width:630px){.cards{grid-template-columns:1fr}}
 td input{width:105px;background:#121524;color:#fff;border:1px solid #626886;border-radius:5px;padding:5px}tbody th{text-align:left} .scroll input{accent-color:auto}</style>
-<main><header><small>UNIKEY · 前端报价对比</small><h1>2 折是价格比例</h1><p>同一模型、同一类 Token，已核对的报价中，官方价为 100%，UniKey 价为 20%，价差为 80%。</p><p class="muted">11 月 27 日公开周榜快照 · 333 亿 Token · 1 美元 = 10,000 积分</p></header>
-<div class="cards"><div class="card">周榜总用量<strong>333 亿</strong><small>官网公开数据</small></div><div class="card">已核对条目费率<strong>2 折</strong><small>UniKey 价 ÷ 官方价</small></div><div class="card">全平台周度金额<strong>待用量明细</strong><small>需按模型拆分输入、缓存、输出</small></div></div>
-<section id="weekly-example"><h2>333 亿 Token 的价格演算</h2><p><strong>分享示例 · 按总 Token 拆分</strong>　20% 普通输入、60% 缓存命中、20% 输出。</p><div class="cards"><div class="card">官方对照价<strong>$3,356.64</strong><small>33,566,400 积分</small></div><div class="card">UniKey 报价<strong>$671.33</strong><small>6,713,280 积分</small></div><div class="card">示例价差<strong>$2,685.31</strong><small>低 80%</small></div></div><p>普通输入 66.6 亿、缓存命中 199.8 亿、输出 66.6 亿 Token。分别乘以对应费率，再按 10,000 积分兑 1 美元换算。上述比例为分享示例。</p><p>11 月 27 日公开周榜总量为 333 亿 Token。以下将这批用量全部套用 DeepSeek V4 Flash 同一个定价条目，每行代表一种独立的计价情景。全平台实际费用需按模型与 Token 类型汇总。</p><div class="scroll" tabindex="0"><table><thead><tr><th scope="col">示例口径</th><th scope="col">官方对照价</th><th scope="col">UniKey 报价</th></tr></thead><tbody><tr><th scope="row">全部按普通输入</th><td>$4,662.00</td><td>$932.40</td></tr><tr><th scope="row">全部按缓存命中</th><td>$932.40</td><td>$186.48</td></tr><tr><th scope="row">全部按输出</th><td>$9,324.00</td><td>$1,864.80</td></tr></tbody></table></div><p>普通输入示例：33,300 百万 Token × 280 积分／百万 Token ÷ 10,000 积分／美元 = $932.40。</p><p><a href="https://www.getunikey.ai/rankings">官网周榜</a> · <a href="https://www.getunikey.ai/pricing/deepseek-v4-flash">DeepSeek V4 Flash 报价</a></p></section>
+<main><header><small>UNIKEY · 前端报价对比</small><h1>2 折是价格比例</h1><p>同一模型、同一类 Token，已核对的报价中，官方价为 100%，UniKey 价为 20%，价差为 80%。</p><p class="muted">11 月 27 日公开周榜快照 · 326 亿 Token · 1 美元 = 10,000 积分</p></header>
+<div class="cards"><div class="card">周榜总用量<strong>326 亿</strong><small>官网公开数据</small></div><div class="card">已核对条目费率<strong>2 折</strong><small>UniKey 价 ÷ 官方价</small></div><div class="card">全平台周度金额<strong>部分可计价</strong><small>小计仅覆盖三类报价齐全的条目</small></div></div>
+<section id="weekly-example"><h2>按官网每个模型的用量分别计算</h2><p><strong>统一测算比例</strong>　20% 普通输入 · 60% 缓存命中 · 20% 输出。该比例应用于各模型的公开总用量。报价齐全才计入小计，缺价条目仍显示分配用量。</p></section>
 <section><h2>从哪里查实际用量</h2><p><b>公开排行榜</b>展示各模型 Token 总量。<b>模型价格页</b>展示普通输入、缓存输入和输出的报价。</p><p>账户用量可在登录后查看控制台的 Track Usage。平台全量周报需要按同一期间、同一模型和路由汇总调用计量日志。API 响应的 usage 可用于记录单次调用，字段按端点和模型核对。</p><p><a href="https://www.getunikey.ai/rankings">公开周榜</a> · <a href="https://www.getunikey.ai/pricing">模型定价</a> · <a href="https://docs.getunikey.ai/docs/quick-start/">控制台用量说明</a> · <a href="https://docs.getunikey.ai/docs/api-reference/">API 用量字段</a></p></section>
-<section><h2>逐模型报价与用量测算</h2><p>费率单位为积分／百万 Token，顺序为普通输入／缓存命中／输出。用量框默认为空，可填同一周期的实际值（百万 Token）。请将普通输入和缓存命中拆开，避免重复计量。确认为零时填 0。</p><p>— 表示未核验到缓存费率。填入正数缓存用量时，相关行待补报价。缓存写入、多模态和工具费用按实际账单另计。</p>
+<section><h2>逐模型报价与用量测算</h2><p>费率单位为积分／百万 Token，顺序为普通输入／缓存命中／输出。下表已按指定比例填入测算用量（百万 Token），可用同一期间的实际用量替换。</p><p>— 表示该计费项未核验到每百万 Token 的报价。缺价项有用量时，该行待补报价。榜单为取整显示，总量和逐项相加可能略有差异。缓存写入、多模态和工具费用按实际账单另计。</p>
 <div class="scroll" tabindex="0"><table><thead><tr><th>模型条目</th><th>周榜总量<br>百万 Token</th><th>官方费率</th><th>UniKey 费率</th><th>普通输入</th><th>缓存命中</th><th>输出</th><th>官方美元</th><th>UniKey 美元</th></tr></thead><tbody id="rows"></tbody></table></div>
 <p id="subtotal" aria-live="polite">已填写条目小计：待输入。</p></section>
 <section><h2>一分钟讲清楚</h2><p>以 DeepSeek V4 Flash 的榜首定价条目为例，每百万普通输入 Token，官方报价是 1,400 积分，UniKey 是 280 积分。每百万缓存命中 Token 的对应报价是 280 和 56 积分，输出则是 2,800 和 560 积分。</p><p>计价公式为各类用量（百万 Token）乘以对应费率后相加，再除以 10,000 换算美元。</p><p><a href="./">返回市场演示</a></p></section></main>
 <script>
-const models = [
- ['DeepSeek V4 Flash','deepseek-v4-flash',9290,1400,2800,280,560,280,56],
- ['GPT 6.1 Sol','gpt-6.1-sol',7120,40000,400000,8000,80000],
- ['DeepSeek V4 Flash · deepseek 路由','deepseek%2Fdeepseek-v4-flash',5400,900,1800,180,360,180,36],
- ['GPT 6 Astra','gpt-6-astra',5080,200000,1000000,40000,200000,100000,20000],
- ['GPT 5.6 Sol','gpt-5.6-sol',1580,25000,200000,5000,40000],
- ['GPT 5.6 Luna','gpt-5.6-luna',1290,20000,160000,4000,32000],
- ['Claude Opus 5.5','claude-opus-5-5',743.5,100000,2000000,20000,400000,50000,10000],
- ['DeepSeek V4 Pro','deepseek-v4-pro',686,4350,8700,870,1740],
- ['DeepSeek V4 Pro · deepseek 路由','deepseek%2Fdeepseek-v4-pro',529.3,4350,8700,870,1740,36.2486,7.2497],
- ['GPT 5.5','gpt-5.5',522.1,50000,300000,10000,60000]
-];
+const models = [["DeepSeek V4 Flash", "deepseek-v4-flash", 9260, 1400, 2800, 280, 560, 280, 56], ["GPT 6.1 Sol", "gpt-6.1-sol", 6720, 40000, 400000, 8000, 80000], ["DeepSeek V4 Flash · deepseek 路由", "deepseek%2Fdeepseek-v4-flash", 5390, 900, 1800, 180, 360, 180, 36], ["GPT 6 Astra", "gpt-6-astra", 5080, 200000, 1000000, 40000, 200000, 100000, 20000], ["GPT 5.6 Sol", "gpt-5.6-sol", 1550, 25000, 200000, 5000, 40000], ["GPT 5.6 Luna", "gpt-5.6-luna", 1290, 20000, 160000, 4000, 32000], ["Claude Opus 5.5", "claude-opus-5-5", 743.5, 100000, 2000000, 20000, 400000, 50000, 10000], ["DeepSeek V4 Pro", "deepseek-v4-pro", 686, 4350, 8700, 870, 1740], ["GPT 5.5", "gpt-5.5", 522.2, 50000, 300000, 10000, 60000], ["DeepSeek V4 Pro · deepseek 路由", "deepseek%2Fdeepseek-v4-pro", 516.3, 4350, 8700, 870, 1740, 36.2486, 7.2497], ["Claude Opus 4.8", "claude-opus-4-8", 287.1, 50000, 250000, 10000, 50000, 12500, 2500], ["Grok 4.3", "x-ai%2Fgrok-4.3", 135.5, 12500, 25000, 2500, 5000, 2000, 400], ["Qwen3.7 Max", "qwen3.7-max", 120.4, 12500, 37500, 2500, 7500, 1250, 250], ["Gemini 3.5 Flash", "google%2Fgemini-3.5-flash", 83.1, 15000, 90000, 3000, 18000, 1500, 300], ["Seedream 5.0 Pro", "bytedance-seed%2Fseedream-5-0-pro", 65.6], ["GPT 6 Luna", "gpt-6-luna", 59.2, 2000, 10000, 400, 2000], ["Kimi K2.7 Code", "kimi-k2.7-code", 37.6, 2750, 11000, 550, 2200], ["GPT 5.6 Terra", "gpt-5.6-terra", 29, 15000, 120000, 3000, 24000], ["Gemini 3.1 Flash Image", "google%2Fgemini-3.1-flash-image", 24], ["Claude Haiku 4.5", "claude-haiku-4-5-20251001", 23.2, 10000, 50000, 2000, 10000, 1000, 200]];
 
 const number = new Intl.NumberFormat('zh-CN',{maximumFractionDigits:4});
 const usd = new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'});
@@ -30,7 +19,7 @@ const tbody = document.querySelector('#rows');
 const rate = (i,h,o) => [i,h,o].map(v => v == null ? '—' : number.format(v)).join(' / ');
 tbody.innerHTML = models.map(([name,path,v,oi,oo,ui,uo,oh,uh]) =>
  '<tr><th scope="row"><a href="https://www.getunikey.ai/pricing/'+path+'">'+name+'</a></th><td>'+number.format(v)+'</td><td>'+rate(oi,oh,oo)+'</td><td>'+rate(ui,uh,uo)+'</td>'+
- ['普通输入','缓存命中','输出'].map(label=>'<td><input type="number" min="0" step="any" aria-label="'+name+' '+label+'（百万 Token）"></td>').join('')+
+ ['普通输入','缓存命中','输出'].map((label,i)=>'<td><input type="number" min="0" step="any" value="'+(v*[.2,.6,.2][i]).toFixed(2)+'" aria-label="'+name+' '+label+'（百万 Token）"></td>').join('')+
  '<td data-cost>—</td><td data-cost>—</td></tr>').join('');
 function calculate(values, rates){
  return values.reduce((sum,value,i)=>sum+value*(rates[i]??0),0)/10000;
@@ -44,8 +33,8 @@ function update(){
   const values=inputs.map(input=>input.valueAsNumber);
   cells[0].textContent=cells[1].textContent='—';
   if(values.some(value=>!Number.isFinite(value)||value<0))continue;
-  if(values[1]>0&&(oh==null||uh==null)){
-   cells[0].textContent=cells[1].textContent='待补缓存价';
+  if([[oi,ui],[oh,uh],[oo,uo]].some((pair,i)=>values[i]>0&&pair.some(price=>price==null))){
+   cells[0].textContent=cells[1].textContent='待补报价';
    continue;
   }
   const official=calculate(values,[oi,oh,oo]),unikey=calculate(values,[ui,uh,uo]);
@@ -58,4 +47,5 @@ function update(){
   : '已填写条目小计：待输入。';
 }
 tbody.addEventListener('input',update);
+update();
 </script></html>
