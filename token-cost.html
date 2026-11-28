@@ -4,6 +4,19 @@
 td input{width:105px;background:#121524;color:#fff;border:1px solid #626886;border-radius:5px;padding:5px}tbody th{text-align:left} .scroll input{accent-color:auto}</style>
 <main><header><small>UNIKEY · 前端报价对比</small><h1>2 折是价格比例</h1><p>同一模型、同一类 Token，已核对的报价中，官方价为 100%，UniKey 价为 20%，价差为 80%。</p><p class="muted">11 月 28 日公开周榜快照 · 301 亿 Token · 1 美元 = 10,000 积分</p></header>
 <div class="cards"><div class="card">周榜总用量<strong>301 亿</strong><small>官网公开数据</small></div><div class="card">已核对条目费率<strong>2 折</strong><small>UniKey 价 ÷ 官方价</small></div><div class="card">全平台周度金额<strong>部分可计价</strong><small>文本已估算，图片待请求次数</small></div></div>
+<section id="weekly-data"><h2>UniKey 周度运营快照</h2><div class="cards">
+<div class="card">全球累计注册<strong>93 万+</strong><small>11 月 19 日团队更新，11 月 28 日最新值待核验</small></div>
+<div class="card">本周新增注册<strong>待核验</strong><small>当前会话未见全平台新增注册统计</small></div>
+<div class="card">官网「本周」Token 总量<strong>301 亿</strong><small>11 月 28 日榜单快照</small></div>
+<div class="card">日均 Token（按 7 天折算）<strong>43 亿</strong><small>301 亿 ÷ 7</small></div>
+<div class="card">周环比<strong>待核验</strong><small>缺少上一完整同口径周期总量</small></div></div>
+<h3>UniKey 平台模型用量排行 · 前五条目</h3>
+<div class="barlabel"><span>1. DeepSeek V4 Flash</span><b>91.4 亿</b></div><div class="bar"><div style="width:100%"></div></div>
+<div class="barlabel"><span>2. GPT 6.1 Sol</span><b>62.8 亿</b></div><div class="bar"><div style="width:68.71%"></div></div>
+<div class="barlabel"><span>3. GPT 6 Astra</span><b>50.7 亿</b></div><div class="bar"><div style="width:55.47%"></div></div>
+<div class="barlabel"><span>4. DeepSeek V4 Flash · deepseek 路由</span><b>40.6 亿</b></div><div class="bar"><div style="width:44.42%"></div></div>
+<div class="barlabel"><span>5. GPT 5.6 Sol</span><b>14.3 亿</b></div><div class="bar"><div style="width:15.65%"></div></div>
+<p>排行以 UniKey 平台公开周榜为准，同名路由按官网条目分别列示。完整 20 项见下方明细。</p><p><a href="https://www.getunikey.ai/rankings">查看官网排行榜</a></p></section>
 <section id="weekly-example"><h2>按官网每个模型的用量分别计算</h2><p><strong>统一测算比例</strong>　20% 普通输入 · 60% 缓存命中 · 20% 输出。该比例应用于各模型的公开总用量。文本条目缺少缓存报价时，按各自普通输入价代算。图片按请求计费，另列每次价格。</p></section>
 <section><h2>从哪里查实际用量</h2><p><b>公开排行榜</b>展示各模型 Token 总量。<b>模型价格页</b>展示普通输入、缓存输入和输出的报价。</p><p>账户用量可在登录后查看控制台的 Track Usage。平台全量周报需要按同一期间、同一模型和路由汇总调用计量日志。API 响应的 usage 可用于记录单次调用，字段按端点和模型核对。</p><p><a href="https://www.getunikey.ai/rankings">公开周榜</a> · <a href="https://www.getunikey.ai/pricing">模型定价</a> · <a href="https://docs.getunikey.ai/docs/quick-start/">控制台用量说明</a> · <a href="https://docs.getunikey.ai/docs/api-reference/">API 用量字段</a></p></section>
 <section><h2>逐模型报价与用量测算</h2><p>费率单位为积分／百万 Token，顺序为普通输入／缓存命中／输出。下表已按指定比例填入测算用量（百万 Token），可用同一期间的实际用量替换。</p><p>缓存列标「代算」的文本条目按各自普通输入费率估算。按次计费的图片模型在表后单列。全站 API 请求总次数和两种图片模型的计费请求次数未在公开周榜披露。榜单为取整显示，总量和逐项相加可能略有差异。缓存写入、多模态和工具费用按实际账单另计。</p>
